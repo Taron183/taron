@@ -6,7 +6,7 @@
 
 
 	$result = mysqli_query($con,"SELECT * FROM comment  ORDER BY id DESC ");
-	mysqli_query($con,"UPDATE  comment SET news = '11'");
+
 
 
 	
@@ -106,7 +106,7 @@
 
 
 
-
+	<?php mysqli_query($con,"UPDATE  comment SET news = '1'")?>
 
 
 

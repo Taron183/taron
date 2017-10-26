@@ -17,8 +17,7 @@
 	
 	
 	
-	$res = mysqli_query($con,"SELECT * FROM  comment  WHERE  news = '00'");
-	$assoc = mysqli_fetch_assoc($res);
+	$res = mysqli_query($con,"SELECT * FROM  comment  WHERE  news = '0'");
 	$num = mysqli_num_rows($res)
 	
 	
@@ -52,7 +51,7 @@
 		<ul class="nav navbar-nav">
 			<li ><a  href="admin.php">Home</a></li>
 			<li ><a href="category.php">Category</a></li>
-			<li ><a href="comment_admin.php">Comment  <strong class="str">(<?php if($assoc['news'] == 00){echo $num;}  ?>)</strong></a></li>
+			<li ><a href="comment_admin.php">Comment  <strong class="str">(<?php if($num != 0){echo $num;}else{echo "";}  ?>)</strong></a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 			

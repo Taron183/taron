@@ -28,7 +28,7 @@
 				
 				
 				
-				$insert = mysqli_query($con,"INSERT INTO  comment(comment, username, firstname, lastname, product_name, id_pro, chek, news) VALUES ('$comment', '$username', '$firstname', '$lastname', '$product_name',  '$id_pro', '0', '00')"); 
+				$insert = mysqli_query($con,"INSERT INTO  comment(comment, username, firstname, lastname, product_name, id_pro) VALUES ('$comment', '$username', '$firstname', '$lastname', '$product_name',  '$id_pro')"); 
 				
 				if($insert == true){
 					echo "yes_com";
