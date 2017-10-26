@@ -55,6 +55,15 @@ $(document).ready(function(){
 	})
 	
 	
+	$(".cart").click(function(){
+		id_pro = $(this).attr("data-id_pro");
+		id_user = $(this).attr("data-id_user");
+		inp_val = $(".inp_cat").val();
+			
+		console.log(id_pro)
+		console.log(id_user)
+		console.log(inp_val)
+	})
 	
 	
 })

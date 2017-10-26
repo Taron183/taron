@@ -15,6 +15,7 @@
 		
 		
 		
+		
 	}
 	
 	else{
@@ -24,7 +25,7 @@
 
 	
 	
-		$resalt_com = mysqli_query($con, "SELECT * FROM comment WHERE  id_pro = '$id_pro' and chek = '1'  ");
+	$resalt_com = mysqli_query($con, "SELECT * FROM comment WHERE  id_pro = '$id_pro' and chek = '1'  ");
 		
 	
 	
@@ -42,94 +43,108 @@
 			
 			<div class="row">
 				<div class="col-sm-6  product_page-left">
-							<div class="product-gallery">
-														
-								<div class="row">
-									<div class="col-lg-12">
-										<img  class="image_new" width="400" height="400" alt="" id="productZoom" src="images/<?php echo $assoc['id_cat'] ?>/<?php echo $assoc['id'] ?>/<?php echo $assoc['image']?> ">								
+					<div class="product-gallery">
+												
+						<div class="row">
+							<div class="col-lg-12">
+								<img  class="image_new" width="400" height="400" alt="" id="productZoom" src="images/<?php echo $assoc['id_cat'] ?>/<?php echo $assoc['id'] ?>/<?php echo $assoc['image']?> ">								
+							</div>
+							<div class="col-lg-12  image-thumb">
+								<div class="bx-wrapper" style="max-width: 800px; margin: 0px auto;">
+									<div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 125px;">
+										<ul id="productGallery" class="image-additional" data-slide-width="125" style="width: 515%; position: relative; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
+											<li style="float: left; list-style: none; position: relative; width: 125px; margin-right: 15px;">
+												
+													
+													<img  class="images_pro images_pro1" width="125" height="125" src="images/<?php echo $assoc['id_cat'] ?>/<?php echo $assoc['id'] ?>/<?php echo $assoc['image']?>">
+													
+											</li>
+											
+											<?php $re = mysqli_query($con,"SELECT * FROM  images WHERE id_pro = '$id_pro' ") ?>
+											<?php  while($ass = mysqli_fetch_assoc($re)){?>
+												<li style="float: left; list-style: none; position: relative; width: 125px; margin-right: 15px;">
+												
+													
+													<img class="images_pro" width="125" height="125" src="images/<?php echo $assoc['id_cat'] ?>/<?php echo $assoc['id'] ?>/<?php echo $ass['image']?>">
+													
+												</li>
+											<?php  }?>
+											
+											
+											
+										</ul>
 									</div>
-									<div class="col-lg-12  image-thumb">
-										<div class="bx-wrapper" style="max-width: 800px; margin: 0px auto;">
-											<div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 125px;">
-												<ul id="productGallery" class="image-additional" data-slide-width="125" style="width: 515%; position: relative; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
-													<li style="float: left; list-style: none; position: relative; width: 125px; margin-right: 15px;">
-														
-															
-															<img  class="images_pro images_pro1" width="125" height="125" src="images/<?php echo $assoc['id_cat'] ?>/<?php echo $assoc['id'] ?>/<?php echo $assoc['image']?>">
-															
-													</li>
-													
-													<?php $re = mysqli_query($con,"SELECT * FROM  images WHERE id_pro = '$id_pro' ") ?>
-													<?php  while($ass = mysqli_fetch_assoc($re)){?>
-														<li style="float: left; list-style: none; position: relative; width: 125px; margin-right: 15px;">
-														
-															
-															<img class="images_pro" width="125" height="125" src="images/<?php echo $assoc['id_cat'] ?>/<?php echo $assoc['id'] ?>/<?php echo $ass['image']?>">
-															
-														</li>
-													<?php  }?>
-													
-													
-													
-												</ul>
-											</div>
-											<div class="bx-controls bx-has-controls-direction">
-												<div class="bx-controls-direction">
-													<a class="bx-prev disabled" href="">
-														<i class="material-icons-chevron_left"></i>
-													</a>
-													<a class="bx-next disabled" href="">
-														<i class="material-icons-chevron_right">
-														</i>
-													</a>
-												</div>
-											</div>
+									<div class="bx-controls bx-has-controls-direction">
+										<div class="bx-controls-direction">
+											<a class="bx-prev disabled" href="">
+												<i class="material-icons-chevron_left"></i>
+											</a>
+											<a class="bx-next disabled" href="">
+												<i class="material-icons-chevron_right">
+												</i>
+											</a>
 										</div>
 									</div>
-									
 								</div>
-								
 							</div>
+							
 						</div>
-						<div class="col-sm-6  product_page-right">
-							<div class="general_info product-info">
-								<h2 class="product-title"><?php echo $assoc["name_".$lang] ?></h2>
-								<div class="price-section">							
-									<span class="price-new">$<?php echo $assoc['price'] ?></span> <span class="price-old">$<?php echo $assoc['price_sale'] ?></span> 
-																
-									<div class="reward-block">
-										<span class="reward"><strong>Count:</strong><?php echo $assoc['count'] ?></span>
-									</div>
-									
-								</div>
-								
-								<ul class="list-unstyled product-section">
-																<li><strong>Brand:</strong>
-										<a href="#">Philips</a>
-									</li>
-																<li>
-										<strong>Product Code:</strong>
-										<span>Classic</span>
-									</li>
-																<li>
-										<strong>Reward Points:</strong>
-										<span>400</span>
-									</li>
-																<li>
-										<strong>Availability:</strong>
-										<span class="stock">In Stock</span>
-									</li>
-								</ul>
-								
-								
-								<div class="reward-block">
-										<span class="reward"><strong>Description:</strong><?php echo $assoc[$lang.'_des'] ?></span>
-									</div>
-								
-								
-																			
+						
+					</div>
+				</div>
+				
+				
+				
+				
+				<div class="col-sm-6  product_page-right">
+					<div class="general_info product-info">
+						<h2 class="product-title"><?php echo $assoc["name_".$lang] ?></h2>
+						<div class="price-section">							
+							<span class="price-new">$<?php echo $assoc['price'] ?></span> <span class="price-old">$<?php echo $assoc['price_sale'] ?></span> 
+														
+							<div class="reward-block">
+								<span class="reward"><strong>Count:</strong><?php echo $assoc['count'] ?></span>
 							</div>
-						</div>	
+							
+						</div>
+						
+						<ul class="list-unstyled product-section">
+							<li><strong>Brand:</strong>
+								<a href="#">Philips</a>
+							</li>
+														<li>
+								<strong>Product Code:</strong>
+								<span>Classic</span>
+							</li>
+														<li>
+								<strong>Reward Points:</strong>
+								<span>400</span>
+							</li>
+														<li>
+								<strong>Availability:</strong>
+								<span class="stock">In Stock</span>
+							</li>
+						</ul>
+						
+						
+						<div class="reward-block">
+							<span class="reward"><strong>Description:</strong><?php echo $assoc[$lang.'_des'] ?></span>
+						</div>
+						
+						
+						<div class="quantity">
+							<strong>Quantity:</strong>
+						
+							<input type="number" min="1" max="30" step="1" class="inp_cart"  >
+							
+							<button type="button" id="button-cart" data-loading-text="Loading..." class="btnca btn cart"  data-id_pro="<?php echo $assoc['id']; ?>"  data-id_user="<?php echo $_SESSION['id_user'];; ?>" >Add to Cart</button>
+						</div>
+						
+						
+																	
+					</div>
+				</div>	
+						
 			</div>
 					
 		</div>					
@@ -196,7 +211,7 @@
 		   <?php  }?>
 													
 			
-			
+		</div>	
 		
 						
 						
